@@ -1,0 +1,107 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background-coglor: #d0d3d4;
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 9.6rem;
+  background-color: #fdf2e9;
+  padding: 0 1rem;
+}
+
+.logo {
+  height: 5rem;
+}
+.header-title {
+  text-decoration: none;
+  font-size: 2.5rem;
+}
+
+/* Start: SECTION ConverterBox */
+.section-converter__box {
+  background-color: #f0ffff;
+  height: 40rem;
+
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(235, 151, 78, 0.35),
+      rgba(230, 125, 34, 0.35)
+    ),
+    url(../pictures/bg-image.webp);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.container {
+  max-width: 120rem;
+  padding: 0 3.2rem;
+  margin: 0 auto;
+}
+
+.section-converter__inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: auto;
+  width: 95%;
+  height: 20rem;
+  padding: 60px 45px;
+  border-radius: 10px;
+  background-color: #00000080;
+}
+
+.converter-inner__title {
+  font-size: 2rem;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.inner-select__box {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.arrow-right-left {
+  color: white;
+  width: 3rem;
+}
+.equal-svg {
+  color: white;
+  width: 3rem;
+}
+
+.select-box select {
+  padding: 1rem 10rem;
+  outline: none;
+  border: 1px solid var(--text-400);
+  border-radius: 0.75rem;
+  font-weight: 700;
+  color: var(--text-700);
+}
+
+.exchange-form {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.inner-forms__box {
+  margin: 2rem 0;
+}
+.exchange-form input {
+  padding: 1rem 7rem;
+  outline: none;
+  border: 1px solid var(--text-400);
+  border-radius: 0.75rem;
+  font-weight: 700;
+  color: var(--text-700);
+}
