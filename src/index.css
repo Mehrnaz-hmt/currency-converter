@@ -4,20 +4,17 @@
   box-sizing: border-box;
 }
 body {
-  background-coglor: #d0d3d4;
+  background-color: #d0d3d4;
 }
 header {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  height: 9.6rem;
+  height: 5rem;
   background-color: #fdf2e9;
   padding: 0 1rem;
 }
 
-.logo {
-  height: 5rem;
-}
 .header-title {
   text-decoration: none;
   font-size: 2.5rem;
@@ -51,7 +48,7 @@ header {
   left: 50%;
   transform: translate(-50%, -50%);
   margin: auto;
-  width: 95%;
+  width: 60%;
   height: 20rem;
   padding: 60px 45px;
   border-radius: 10px;
@@ -65,11 +62,6 @@ header {
   margin-bottom: 36px;
 }
 
-.inner-select__box {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
 .arrow-right-left {
   color: white;
   width: 3rem;
@@ -78,9 +70,14 @@ header {
   color: white;
   width: 3rem;
 }
+.select-box {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
 
 .select-box select {
-  padding: 1rem 10rem;
+  padding: 1rem 3rem;
   outline: none;
   border: 1px solid var(--text-400);
   border-radius: 0.75rem;
@@ -88,9 +85,16 @@ header {
   color: var(--text-700);
 }
 
+.select-box-title {
+  text-align: center;
+  margin-bottom: 0.5rem;
+  color: white;
+  font-weight: 600;
+}
+
 .exchange-form {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
 }
 
@@ -98,10 +102,27 @@ header {
   margin: 2rem 0;
 }
 .exchange-form input {
-  padding: 1rem 7rem;
+  padding: 1rem 3rem;
   outline: none;
   border: 1px solid var(--text-400);
   border-radius: 0.75rem;
   font-weight: 700;
   color: var(--text-700);
+}
+.btn {
+  border-radius: 0.5rem;
+  padding: 13px 13px;
+  overflow: hidden;
+}
+
+.btn--primary {
+  background-color: beige;
+  color: grey;
+  font-size: 13px 13px;
+}
+
+.showAmount {
+  width: 30%;
+  border-radius: 2px solid grey;
+  padding: 20px 1rem;
 }

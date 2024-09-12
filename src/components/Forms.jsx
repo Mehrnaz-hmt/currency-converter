@@ -1,43 +1,72 @@
-import React from "react";
+import React, { useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
 
-function Forms() {
+function Forms({ moneyConverter, inputValue, setInputValue }) {
+  const [calculatedValue, setCalculatedValue] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Perform conversion when the form is submitted
+    const convertedValue = moneyConverter(inputValue);
+    setCalculatedValue(convertedValue);
+  };
+
+  const handleInputValue = (e) => {
+    const value = e.target.value;
+    if (value === "" || (!isNaN(value) && !isNaN(parseFloat(value)))) {
+      setInputValue(value);
+      // Automatically convert when the input value changes
+      const convertedValue = moneyConverter(value);
+      setCalculatedValue(convertedValue);
+    } else {
+      toast.error("Please Enter A Valid Number!");
+      setInputValue("");
+      setCalculatedValue("");
+    }
+  };
+
   return (
     <>
-      {/* <form className="exchange-form" onSubmit={handleSubmit}> */}
-      <form className="exchange-form">
+      <form className="exchange-form" onSubmit={handleSubmit}>
+        <Toaster />
         <input
-          //   value={title}
-          //   onChange={(e) => setTitle(e.target.value)}
-          //   className="text-field"
-          //   name="name"
-          //   type="text"
-          placeholder="Enter the Value..."
+          value={inputValue}
+          onChange={handleInputValue}
+          name="name"
+          type="text"
+          placeholder="Please enter the value"
         />
         <span className="equal-svg">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
-            stroke-width="1.5"
+            strokeWidth="1.5"
             stroke="currentColor"
-            class="size-6"
+            className="size-6"
           >
             <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
               d="M3.75 9h16.5m-16.5 6.75h16.5"
             />
           </svg>
         </span>
 
-        <input
-          //   value={description}
-          //   onChange={(e) => setDescription(e.target.value)}
-          //   name="name"
-          //   type="text"
-          //   className="text-field"
-          placeholder="Enter the value ..."
-        />
+        <div>
+          <input
+            value={calculatedValue}
+            type="text"
+            readOnly
+            placeholder="Automatically will calculate"
+          />
+        </div>
+
+        <div>
+          <button type="submit" className="btn btn--primary">
+            Convert
+          </button>
+        </div>
       </form>
     </>
   );
