@@ -1,39 +1,31 @@
-import React, { useState } from "react";
+import React from "react";
 import toast, { Toaster } from "react-hot-toast";
 
-function Forms({ moneyConverter, inputValue, setInputValue }) {
-  const [calculatedValue, setCalculatedValue] = useState("");
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Perform conversion when the form is submitted
-    const convertedValue = moneyConverter(inputValue);
-    setCalculatedValue(convertedValue);
-  };
-
+function Forms({
+  inputValue,
+  setInputValue,
+  calculatedValue,
+}) {
   const handleInputValue = (e) => {
     const value = e.target.value;
+
     if (value === "" || (!isNaN(value) && !isNaN(parseFloat(value)))) {
       setInputValue(value);
-      // Automatically convert when the input value changes
-      const convertedValue = moneyConverter(value);
-      setCalculatedValue(convertedValue);
     } else {
       toast.error("Please Enter A Valid Number!");
       setInputValue("");
-      setCalculatedValue("");
     }
   };
 
   return (
     <>
-      <form className="exchange-form" onSubmit={handleSubmit}>
-        <Toaster />
+      <Toaster />
+      <form className="exchange-form">
         <input
           value={inputValue}
           onChange={handleInputValue}
           name="name"
-          type="text"
+          type="number"
           placeholder="Please enter the value"
         />
         <span className="equal-svg">
@@ -56,16 +48,10 @@ function Forms({ moneyConverter, inputValue, setInputValue }) {
         <div>
           <input
             value={calculatedValue}
-            type="text"
+            type="number"
             readOnly
             placeholder="Automatically will calculate"
           />
-        </div>
-
-        <div>
-          <button type="submit" className="btn btn--primary">
-            Convert
-          </button>
         </div>
       </form>
     </>

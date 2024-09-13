@@ -30,7 +30,7 @@ header {
       rgba(235, 151, 78, 0.35),
       rgba(230, 125, 34, 0.35)
     ),
-    url(../pictures/bg-image.webp);
+    url(../pictures/bg2.jpg);
   background-size: cover;
   background-position: center;
   position: relative;
@@ -48,9 +48,9 @@ header {
   left: 50%;
   transform: translate(-50%, -50%);
   margin: auto;
-  width: 60%;
+  width: 54%;
   height: 20rem;
-  padding: 60px 45px;
+  padding: 60px 32px;
   border-radius: 10px;
   background-color: #00000080;
 }

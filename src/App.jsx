@@ -1,5 +1,5 @@
-import Header from "./components/Header";
 import ConverterBox from "./components/ConverterBox";
+import toast, { Toaster } from "react-hot-toast";
 
 function App() {
 
@@ -7,7 +7,7 @@ function App() {
 
   return (
     <div>
-      <Header />
+       <Toaster />
       <ConverterBox  />
     </div>
   );
